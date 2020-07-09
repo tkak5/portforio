@@ -24,6 +24,9 @@ export default function Home({ allWorksData }) {
         {allWorksData.map(({id, title, category, techs, url, photo, git, comment}) => (
           <li id={id} className="p-4 md:w-1/2">
             <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+              <div className="w-full object-cover object-center">
+                <a href={url} target="blank"><img className="w-full h-full" src={photo}/></a>
+              </div>
               <div className="p-6">
                 <p className="text-lg">{category}({title})</p>
                 <ul className="my-2">
@@ -35,9 +38,6 @@ export default function Home({ allWorksData }) {
                 <a target="blank" href={url} className="text-blue-500"><p>link</p></a>
                 <a target="blank" href={git} className="text-blue-500"><p>source code</p></a>
                 <p>{comment}</p>
-              </div>
-              <div className="w-full object-cover object-center">
-                <a href={url} target="blank"><img src={photo}/></a>
               </div>
             </div>
           </li>
