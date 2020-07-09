@@ -22,10 +22,10 @@ export default function Home({ allWorksData }) {
       <h1 className="p-4 text-lg font-bold text-center">ポートフォリオ</h1>
       <ul className="flex flex-wrap">
         {allWorksData.map(({id, title, category, techs, url, photo, git, comment}) => (
-          <li id={id} className="p-4 md:w-1/2">
-            <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-              <div className="w-full object-cover object-center">
-                <a href={url} target="blank"><img className="w-full h-full" src={photo}/></a>
+          <li id={id} className="p-4 md:w-1/2 lg:w-1/3">
+            <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow">
+              <div className="w-full">
+                <a href={url} target="blank"><img className="h-48 w-full object-cover object-center" src={photo}/></a>
               </div>
               <div className="p-6">
                 <p className="text-lg">{category}({title})</p>
